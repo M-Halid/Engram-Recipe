@@ -1,0 +1,28 @@
+/* src/App.css */
+.App {
+  text-align: center;
+}
+
+.recipe-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px;
+  display: inline-block;
+  width: 300px;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: auto;
+}
+
+.recipe-filter label {
+  display: block;
+  margin: 10px 0;
+}
+
+.recipe-filter select,
+.recipe-filter input {
+  padding: 5px;
+  margin-left: 10px;
+}
