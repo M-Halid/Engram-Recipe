@@ -1,4 +1,3 @@
-// src/data/recipes.ts
 import { Recipe } from "../interfaces/Recipe";
 
 export const recipes: Recipe[] = [
