@@ -1,11 +1,30 @@
-// src/App.tsx
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import { Recipe } from './interfaces/Recipe';
 import { recipes } from './data/recipes';
 import RecipeCard from './components/RecipeCard';
 import RandomRecipeButton from './components/RandomRecipeButton';
 import RecipeFilter from './components/RecipeFilter';
-import './App.css';
+
+const backgroundImage = 'https://www.budgetbytes.com/wp-content/uploads/2013/07/How-to-Calculate-Recipe-Costs-H.jpg';
+
+const AppContainer = styled.div`
+  text-align: center;
+  padding: 20px;
+  background-image: url(${backgroundImage});
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Title = styled.h1`
+  font-size: 2.5em;
+  margin-bottom: 20px;
+`;
 
 const App: React.FC = () => {
   const [currentRecipe, setCurrentRecipe] = useState<Recipe | null>(null);
@@ -24,8 +43,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App">
-      <h1>Random Recipe Generator</h1>
+    <AppContainer>
+      <Title>Random Recipe Generator</Title>
       <RecipeFilter
         cuisine={cuisine}
         difficulty={difficulty}
@@ -35,9 +54,9 @@ const App: React.FC = () => {
         setMainIngredient={setMainIngredient}
       />
       <RandomRecipeButton onClick={getRandomRecipe} />
-      <br />
+
       {currentRecipe && <RecipeCard recipe={currentRecipe} />}
-    </div>
+    </AppContainer>
   );
 }
 
